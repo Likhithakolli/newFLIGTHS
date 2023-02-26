@@ -55,10 +55,12 @@ public class Booking implements Serializable{
 	@JoinColumn(name="flight_id")
 	private Flight flight;
 	
-	@ManyToOne
-	@JoinColumn(name="user_id")
+	//@ManyToOne
+	//@JoinColumn(name="user_id")
 	//@JsonIgnoreProperties({"userId", "password","dob"})
-	private User user;
+	//private User user;
+	@ManyToOne(cascade = CascadeType.PERSIST)
+        private User user;
 	
 	@OneToMany(mappedBy="bookings")
 	@JsonIgnoreProperties({"tickets"})
