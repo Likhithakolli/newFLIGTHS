@@ -57,7 +57,7 @@ public class Booking implements Serializable{
 	
 	@ManyToOne
 	@JoinColumn(name="user_id")
-	@JsonIgnoreProperties({"userId", "password","dob"})
+	//@JsonIgnoreProperties({"userId", "password","dob"})
 	private User user;
 	
 	@OneToMany(mappedBy="bookings")
